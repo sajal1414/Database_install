@@ -3,13 +3,8 @@
 # Check if Docker is installed
 
 if ! [ -x "$(command -v docker)" ]; then
-
-if [ -z "$1" ]; then
 	echo 'Docker is not installed. Do you want to install it(The installation depends on docker)? (yes/no)'
   read install_docker
-  else
-  install_docker=$1
-  fi
   if [ "$install_docker" == "yes" ]; then
     echo 'Installing Docker...'
     sudo apt-get update
@@ -25,12 +20,8 @@ else
 fi
 
 
-if [ -z "$2" ]; then
 echo "Do you want to install MySQL? (yes/no)"
 read mysql
-else
-mysql=$2
-fi
 
 if [ "$mysql" == "yes" ]; then
   echo "Creating mysql directory"
@@ -49,14 +40,8 @@ else
   echo "Skipping MySQL installation."
 fi
 
-
-if [ -z "$3" ]; then
 echo "Do you want to install Postgres? (yes/no)"
 read postgres
-else
-postgres=$3
-fi
-
 
 if [ "$postgres" == "yes" ]; then
   echo "Creating postgres directory"
@@ -75,14 +60,8 @@ else
   echo "Skipping Postgres installation."
 fi
 
-
-if [ -z "$4" ]; then
-echo "Do you want to install mongo? (yes/no)"
+echo "Do you want to install Mongo? (yes/no)"
 read mongo
-else
-mongo=$4
-fi
-
 
 if [ "$mongo" == "yes" ]; then
   echo "Creating mongo directory"
@@ -101,14 +80,8 @@ else
   echo "Skipping Mongo installation."
 fi
 
-
-if [ -z "$5" ]; then
-echo "Do you want to install oracle? (yes/no)"
+echo "Do you want to install Oracle XE? (yes/no)"
 read oracle
-else
-oracle=$5
-fi
-
 
 if [ "$oracle" == "yes" ]; then
   echo "Creating oracle directory"
@@ -128,14 +101,8 @@ else
   echo "Skipping Oracle XE installation."
 fi
 
-
-if [ -z "$6" ]; then
-echo "Do you want to install MS SQL? (yes/no)"
+echo "Do you want to install MS SQL Server? (yes/no)"
 read mssql
-else
-mssql=$6
-fi
-
 
 if [ "$mssql" == "yes" ]; then
   echo "Creating mssql directory"
@@ -154,14 +121,9 @@ else
   echo "Skipping MS SQL Server installation."
 fi
 
-if [ -z "$7" ]; then
-echo "Do you want to install cassandra? (yes/no)"
+
+echo "Do you want to install Cassandra? (yes/no)"
 read cassandra
-else
-cassandra=$7
-fi
-
-
 
 if [ "$cassandra" == "yes" ]; then
   echo "Creating Cassandra directory"
@@ -180,14 +142,8 @@ else
   echo "Skipping Cassandra installation."
 fi
 
-
-if [ -z "$8" ]; then
 echo "Do you want to install Mariadb? (yes/no)"
 read mariadb
-else
-mariadb=$8
-fi
-
 
 if [ "$mariadb" == "yes" ]; then
   echo "Creating Mariadb directory"
@@ -206,14 +162,8 @@ else
   echo "Skipping Mariadb installation."
 fi
 
-if [ -z "$9" ]; then
 echo "Do you want to install Redis? (yes/no)"
 read redis
-else
-redis=$9
-fi
-
-
 
 if [ "$redis" == "yes" ]; then
   echo "Creating Redis directory"
@@ -232,14 +182,8 @@ else
   echo "Skipping Redis installation."
 fi
 
-
-if [ -z "$10" ]; then
 echo "Do you want to install IBM DB2? (yes/no)"
 read db2
-else
-db2=$10
-fi
-
 
 if [ "$db2" == "yes" ]; then
   echo "Creating IBM DB2 directory"
